@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] text-center p-4">
-      <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">
+      <h1 className="text-5xl font-extrabold text-gray-700 tracking-tight">
         Building the <span className="text-blue-600">Future</span> with AI
       </h1>
       <p className="mt-6 text-lg text-gray-600 max-w-2xl">
