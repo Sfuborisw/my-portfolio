@@ -46,7 +46,7 @@ const ChatWindow = () => {
   };
 
   return (
-    <div className="flex flex-col h-[600px] w-full max-w-2xl mx-auto border rounded-2xl bg-white shadow-xl overflow-hidden">
+    <div className="flex flex-col h-[600px] w-full max-w-2xl mx-auto border dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800 shadow-xl overflow-hidden transition-colors">
       <div className="bg-blue-600 p-4 text-white font-bold text-center">
         AI Project Assistant
       </div>
