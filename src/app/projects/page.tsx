@@ -20,20 +20,12 @@ export default function ProjectsPage() {
       link: "/projects/property-report", 
     },
     {
-      id: 'e-commerce',
-      title: "E-commerce Platform (Coming Soon)",
-      description: "Building a full-stack e-commerce solution with Stripe integration.",
-      tech: ["Stripe", "PostgreSQL", "Next.js"],
-      image: "https://via.placeholder.com/400x250/a1a1aa/e4e4e7?text=E-commerce+Preview",
-      link: "#", // No link for coming soon
-    },
-    {
-      id: 'data-dashboard',
-      title: "Real-time Data Dashboard (Coming Soon)",
-      description: "Developing a live analytics dashboard with WebSockets and Chart.js.",
-      tech: ["WebSockets", "Chart.js", "TypeScript"],
-      image: "https://via.placeholder.com/400x250/34d399/d1fae5?text=Dashboard+Preview",
-      link: "#",
+      id: 'ward-system',
+      title: "Ward Patient Chart System",
+      description: "A medical monitoring dashboard for tracking patient vitals and bed occupancy.",
+      tech: ["Recharts", "Data Vis", "Medical UI"],
+      image: "https://via.placeholder.com/400x250/10b981/ffffff?text=Ward+Chart+System", // 加返 placeholder image
+      link: "/projects/ward-system",
     },
   ];
 

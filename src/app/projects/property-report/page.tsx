@@ -112,7 +112,7 @@ export default function PropertyReportPage() {
                     </span>
                   </td>
                   <td className="p-4 w-40 text-sm">
-                    {/* 加上按鈕讓 Status 可以 Toggle */}
+                    {/* Add button to toggle Status */}
                     <button 
                     onClick={() => toggleStatus(report.id)}
                     className="flex items-center gap-2 hover:opacity-70 transition-opacity"
