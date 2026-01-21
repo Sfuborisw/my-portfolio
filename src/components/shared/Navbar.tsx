@@ -20,7 +20,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
-              DevPortfolio
+              Boris Wong
             </Link>
           </div>
 
