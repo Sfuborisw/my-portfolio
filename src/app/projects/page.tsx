@@ -12,6 +12,14 @@ export default function ProjectsPage() {
       link: "/projects/ai-assistant",
     },
     {
+      id: 'property-report',
+      title: "Property Instance Report System",
+      description: "A professional reporting tool for property managers to track maintenance and incidents.",
+      tech: ["CRUD", "Status Management", "Next.js"],
+      image: "https://via.placeholder.com/400x250/3b82f6/ffffff?text=Property+System",
+      link: "/projects/property-report", // 更新呢個 Link
+    },
+    {
       id: 'e-commerce',
       title: "E-commerce Platform (Coming Soon)",
       description: "Building a full-stack e-commerce solution with Stripe integration.",
