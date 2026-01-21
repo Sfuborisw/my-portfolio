@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       description: "A professional reporting tool for property managers to track maintenance and incidents.",
       tech: ["CRUD", "Status Management", "Next.js"],
       image: "https://via.placeholder.com/400x250/3b82f6/ffffff?text=Property+System",
-      link: "/projects/property-report", // 更新呢個 Link
+      link: "/projects/property-report", 
     },
     {
       id: 'e-commerce',

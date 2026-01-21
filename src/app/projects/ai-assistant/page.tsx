@@ -51,20 +51,3 @@ export default function AiAssistantDetailPage() {
     </div>
   );
 }
-
-// "use client";
-// import Link from "next/link";
-
-// export default function AiAssistantDetailPage() {
-//   return (
-//     <div className="min-h-screen bg-white dark:bg-slate-900 pt-24 pb-12 transition-colors">
-//       <div className="max-w-7xl mx-auto px-4">
-//         <Link href="/projects" className="inline-flex items-center text-blue-600 dark:text-blue-400 mb-8">
-//           ← Back to Projects
-//         </Link>
-//         <h1 className="text-4xl font-bold dark:text-white">AI Assistant Project</h1>
-//         <p className="mt-4 dark:text-slate-300">If you see this, the UI is working!</p>
-//       </div>
-//     </div>
-//   );
-// }
