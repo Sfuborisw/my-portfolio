@@ -28,7 +28,7 @@ export default function AiAssistantDetailPage() {
               <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">Key Features & Technologies</h2>
               <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-2">
                 <li><strong>Gemini 3 Flash API:</strong> Real-time, intelligent conversational AI.</li>
-                <li><strong>Next.js 15 App Router:</strong> Modern, performant web architecture.</li>
+                <li><strong>Next.js App Router:</strong> Modern, performant web architecture.</li>
                 <li><strong>Tailwind CSS v4:</strong> Utility-first styling for responsive design.</li>
                 <li><strong>TypeScript:</strong> Enhanced code quality and developer experience.</li>
                 <li><strong>Dynamic Routing:</strong> Seamless navigation within the portfolio.</li>

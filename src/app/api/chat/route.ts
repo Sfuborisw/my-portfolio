@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       
       About Boris Wong:
       - He is a passionate Full-stack Developer based in Vancouver (Metrotown area).
-      - His technical expertise includes Next.js 15, React, TypeScript, and AI integrations (like Gemini 3).
+      - His technical expertise includes Next.js, React, TypeScript, and AI integrations (like Gemini 3).
       - He is currently building modern web applications that focus on user experience and AI-driven features.
       - This portfolio website itself is one of his key projects, featuring Dark Mode with Tailwind CSS v4.
       

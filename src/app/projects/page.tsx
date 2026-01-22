@@ -7,24 +7,24 @@ export default function ProjectsPage() {
       id: 'ai-assistant', // Unique ID for linking
       title: "Intelligent Portfolio Assistant",
       description: "A context-aware AI powered by Gemini 3 Flash to engage visitors.",
-      tech: ["AI & NLP", "Gemini 3 API", "Next.js 15"],
-      image: "https://via.placeholder.com/400x250/3b82f6/e0e7ff?text=AI+Assistant+Preview", // Placeholder image
+      tech: ["AI & NLP", "Gemini 3 API", "Next.js"],
+      image: "/images/ai-assistant.jpg",
       link: "/projects/ai-assistant",
     },
     {
       id: 'property-report',
       title: "Property Instance Report System",
       description: "A professional reporting tool for property managers to track maintenance and incidents.",
-      tech: ["CRUD", "Status Management", "Next.js"],
-      image: "https://via.placeholder.com/400x250/3b82f6/ffffff?text=Property+System",
-      link: "/projects/property-report", 
+      tech: ["Data Management", "Real-time Reporting"],
+      image: "/images/property-report.jpg",
+      link: "/projects/property-report",
     },
     {
       id: 'ward-system',
       title: "Ward Patient Chart System",
       description: "A medical monitoring dashboard for tracking patient vitals and bed occupancy.",
-      tech: ["Recharts", "Data Vis", "Medical UI"],
-      image: "https://via.placeholder.com/400x250/10b981/ffffff?text=Ward+Chart+System", // 加返 placeholder image
+      tech: ["Data Visualization", "Interactive Analytics"],
+      image: "/images/ward-system.jpg",
       link: "/projects/ward-system",
     },
   ];
