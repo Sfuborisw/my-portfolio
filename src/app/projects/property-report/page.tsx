@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // 記得加 useEffect
 import Link from "next/link";
+import { supabase } from "@/lib/supabase"; // 確保你有呢行
 
 interface Report {
   id: string;
@@ -13,21 +14,8 @@ interface Report {
 }
 
 export default function PropertyReportPage() {
-  const [reports, setReports] = useState<Report[]>([
-    { id: "REP-001", property: "Metrotown Centre", unit: "A102", type: "Plumbing", severity: "High", status: "Open", date: "2026-01-20" },
-    { id: "REP-002", property: "Crystal Mall", unit: "B205", type: "Electrical", severity: "Medium", status: "In Progress", date: "2026-01-19" },
-  ]);
-
-  const deleteReport = (id: string) => {
-    if (window.confirm("Are you sure you want to delete this report?")) {
-      setReports(reports.filter(report => report.id !== id));
-    }
-  };
-
-  // Modal Status
+  const [reports, setReports] = useState<Report[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Form Status
   const [newReport, setNewReport] = useState({
     property: "",
     unit: "",
@@ -35,29 +23,78 @@ export default function PropertyReportPage() {
     severity: "Low" as "Low" | "Medium" | "High",
   });
 
-  // Handle New ReporT
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const reportToAdd: Report = {
-      id: `REP-${Math.floor(Math.random() * 1000).toString().padStart(3, '0')}`, 
-      ...newReport,
-      status: "Open",
-      date: new Date().toISOString().split('T')[0],
+  // 1. 從 Supabase 讀取資料
+  useEffect(() => {
+    const fetchReports = async () => {
+      const { data, error } = await supabase
+        .from('property_reports')
+        .select('*')
+        .order('date', { ascending: false });
+
+      if (data) setReports(data as Report[]);
+      if (error) console.error("Error fetching:", error);
     };
-    setReports([reportToAdd, ...reports]);
-    setIsModalOpen(false);
-    setNewReport({ property: "", unit: "", type: "Plumbing", severity: "Low" });
+    fetchReports();
+  }, []);
+
+  // 2. 新增 Report 到 Supabase
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // 準備要插入 Database 嘅資料（唔好手動整 ID，等 DB 自己生）
+    const reportToInsert = {
+      property: newReport.property,
+      unit: newReport.unit,
+      type: newReport.type,
+      severity: newReport.severity,
+      status: "Open",
+      // date 會由 DB default 生成
+    };
+
+    const { data, error } = await supabase
+      .from('property_reports')
+      .insert([reportToInsert])
+      .select();
+
+    if (data) {
+      setReports([data[0] as Report, ...reports]); // 更新 UI
+      setIsModalOpen(false);
+      setNewReport({ property: "", unit: "", type: "Plumbing", severity: "Low" });
+    }
+    if (error) alert("Error creating report: " + error.message);
   };
 
-  const toggleStatus = (id: string) => {
+  // 3. 更新狀態 (Supabase Update)
+  const toggleStatus = async (id: string) => {
     const statusOrder: Report["status"][] = ["Open", "In Progress", "Resolved"];
-    setReports(reports.map(r => {
-      if (r.id === id) {
-        const next = (statusOrder.indexOf(r.status) + 1) % statusOrder.length;
-        return { ...r, status: statusOrder[next] };
+    const currentReport = reports.find(r => r.id === id);
+    if (!currentReport) return;
+
+    const nextIndex = (statusOrder.indexOf(currentReport.status) + 1) % statusOrder.length;
+    const nextStatus = statusOrder[nextIndex];
+
+    const { error } = await supabase
+      .from('property_reports')
+      .update({ status: nextStatus })
+      .eq('id', id);
+
+    if (!error) {
+      setReports(reports.map(r => r.id === id ? { ...r, status: nextStatus } : r));
+    }
+  };
+
+  // 4. 刪除 Report (Supabase Delete)
+  const deleteReport = async (id: string) => {
+    if (window.confirm("Are you sure you want to delete this report?")) {
+      const { error } = await supabase
+        .from('property_reports')
+        .delete()
+        .eq('id', id);
+
+      if (!error) {
+        setReports(reports.filter(report => report.id !== id));
       }
-      return r;
-    }));
+    }
   };
 
   return (
@@ -97,7 +134,7 @@ export default function PropertyReportPage() {
             <tbody className="divide-y dark:divide-slate-700 text-slate-700 dark:text-slate-200">
               {reports.map((report) => (
                 <tr key={report.id} className="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
-                  <td className="p-4 w-40 font-mono text-sm">{report.id}</td>
+                  <td className="p-4 w-40 font-mono text-sm">{report.id.substring(0, 8)}</td>
                   <td className="p-4 w-40">
                     <div className="font-semibold">{report.property}</div>
                     <div className="text-xs text-slate-400">Unit: {report.unit}</div>
