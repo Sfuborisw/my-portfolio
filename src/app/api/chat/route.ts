@@ -9,7 +9,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "API Key missing" }, { status: 500 });
     }
 
-    // 1. 注入你的個人資料 (Personal Brand Identity)
+    // Personal Brand Identity
     const systemInstruction = `
       You are the AI Brand Ambassador for Boris Wong's Portfolio. 
       

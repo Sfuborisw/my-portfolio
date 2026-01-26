@@ -7,7 +7,6 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
-    // { name: 'AI Chat', href: '/chat' },
     { name: 'About', href: '/about' },
   ];
 
@@ -16,7 +15,6 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full border-b border-gray-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
