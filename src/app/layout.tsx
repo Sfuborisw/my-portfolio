@@ -19,7 +19,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {" "}
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -27,11 +26,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="min-h-screen pt-16 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-            {children}
-          </main>
-          <Footer />
+          <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+            <Navbar />
+            <main className="flex-grow pt-16">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
