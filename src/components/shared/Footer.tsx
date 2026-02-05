@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Center: Contact Links */}
           <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-bold text-slate-600 dark:text-slate-300">
             <a
-              href="mailto:boris@example.com"
+              href="mailto:borix3739@gmail.com"
               className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
             >
               Email
