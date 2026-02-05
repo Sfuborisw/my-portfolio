@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { ThemeToggle } from './ThemeToggle';
+import { useState } from "react";
+import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'About', href: '/about' },
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "About Me", href: "/about" },
+    { name: "Contact Me", href: "/contact" },
   ];
 
   return (
@@ -19,7 +20,10 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo Section */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
+            <Link
+              href="/"
+              className="text-xl font-bold text-blue-600 dark:text-blue-400"
+            >
               Boris Wong
             </Link>
           </div>
@@ -50,9 +54,33 @@ const Navbar = () => {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
               )}
             </button>
           </div>
