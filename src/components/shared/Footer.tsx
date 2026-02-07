@@ -1,9 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [lastPush, setLastPush] = useState<string | null>(null);
+
+  // RESTful API Interaction: Fetching live data from GitHub
+  useEffect(() => {
+    fetch("https://api.github.com/users/Sfuborisw")
+      .then((res) => res.json())
+      .then((data) => {
+        const date = new Date(data.updated_at);
+        const formattedDate = date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+        });
+        setLastPush(formattedDate);
+      })
+      .catch(() => setLastPush(null));
+  }, []);
 
   return (
     <footer className="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md transition-colors">
@@ -23,25 +41,29 @@ const Footer = () => {
           <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-bold text-slate-600 dark:text-slate-300">
             <a
               href="mailto:borix3739@gmail.com"
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+              className="hover:text-blue-600 transition-colors"
             >
               Email
             </a>
             <a
               href="https://linkedin.com/in/boris-pwwong/"
               target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               LinkedIn
             </a>
             <a
               href="https://github.com/Sfuborisw"
               target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="hover:text-blue-600 transition-colors flex items-center gap-2"
             >
               GitHub
+              {lastPush && (
+                <span className="flex items-center gap-1.5 px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 rounded-md text-[10px] font-mono text-blue-600 border border-blue-100 dark:border-blue-800">
+                  <span className="w-1 h-1 bg-blue-600 rounded-full animate-pulse" />
+                  Last Push: {lastPush}
+                </span>
+              )}
             </a>
           </nav>
 

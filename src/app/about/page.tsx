@@ -145,7 +145,7 @@ export default function AboutPage() {
               <p className="text-slate-300 text-xl leading-relaxed mb-8">
                 The future of efficiency isn&apos;t just about writing better
                 code—it&apos;s about <strong>Generative AI</strong>. I am deeply
-                focused on integrating <strong>Claude AI</strong> into modern
+                focused on integrating <strong>AI models</strong> into modern
                 software ecosystems to build intelligent automation.
               </p>
 
