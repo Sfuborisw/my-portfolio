@@ -176,7 +176,7 @@ export default function AboutPage() {
                   </svg>
                 </Link>
                 <a
-                  href="mailto:boris@example.com"
+                  href="mailto:borix3739@gamil.com"
                   className="group flex items-center gap-2 text-slate-300 px-8 py-4 rounded-2xl font-black hover:text-white transition-colors"
                 >
                   Let&apos;s Talk AI
