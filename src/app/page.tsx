@@ -43,23 +43,20 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center min-h-[90vh] px-4 text-center">
         {/* 1. Brief introduction (Added above the title to convey professionalism) */}
         <p className="mb-4 text-blue-600 dark:text-blue-400 font-bold tracking-[0.2em] uppercase text-sm animate-in fade-in slide-in-from-bottom duration-700">
-          Hi, I&apos;m Boris Wong — Software Developer
+          Hi, I&apos;m Boris Wong
         </p>
-
         {/* 2. Main Title */}
         <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-tight">
-          Engineering the <br />
+          Developer Excited to Dive into the <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-            AI-Powered Era
+            New Frontiers of the AI Era
           </span>
         </h1>
-
         {/* 3. Core Value Proposition */}
-        <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+        {/* <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
           Pioneering the uncharted frontiers of the AI industry to build
           what&apos;s next.
-        </p>
-
+        </p> */}
         {/* 4. Dual CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-10">
           <Link
