@@ -8,11 +8,29 @@ const Footer = () => {
   const [lastPush, setLastPush] = useState<string | null>(null);
 
   // RESTful API Interaction: Fetching live data from GitHub
+  // useEffect(() => {
+  //   fetch("https://api.github.com/users/Sfuborisw")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const date = new Date(data.updated_at);
+  //       const formattedDate = date.toLocaleDateString("en-US", {
+  //         month: "short",
+  //         day: "2-digit",
+  //         year: "numeric",
+  //       });
+  //       setLastPush(formattedDate);
+  //     })
+  //     .catch(() => setLastPush(null));
+  // }, []);
+
+  // RESTful API Interaction: Fetching live data from GitHub Repository
   useEffect(() => {
-    fetch("https://api.github.com/users/Sfuborisw")
+    // 改為呼叫特定 repo 的 API
+    fetch("https://api.github.com/repos/Sfuborisw/my-portfolio")
       .then((res) => res.json())
       .then((data) => {
-        const date = new Date(data.updated_at);
+        // 使用 pushed_at 獲取最準確的代碼提交時間
+        const date = new Date(data.pushed_at);
         const formattedDate = date.toLocaleDateString("en-US", {
           month: "short",
           day: "2-digit",
