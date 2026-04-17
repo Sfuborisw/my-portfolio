@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         "Processing high-volume, fluctuating market data in real-time.",
       solution:
         "Engineered a Python ETL pipeline using Cron-based automation to scrape, transform, and store time-series data for instant arbitrage calculations.",
-      metrics: "LATENCY < 250ms // UPTIME 99.9%",
+      metrics: "FOCUS: AUTOMATED ETL PIPELINE",
     },
     {
       id: "ai-assistant",
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         "Minimizing hallucination while maintaining high-speed conversational responses.",
       solution:
         "Leveraged Gemini 3 Flash with a localized RAG architecture (using ChromaDB) to fetch precise resume context before generating responses.",
-      metrics: "ACCURACY 95% // RESPONSE < 1.2s",
+      metrics: "FOCUS: RAG ARCHITECTURE & NLP",
     },
     {
       id: "property-report",
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
         "Handling complex form states and ensuring 100% data integrity in concurrent multi-user environments.",
       solution:
         "Designed a robust relational data model to track incident lifecycles from report to resolution with real-time analytics visualization.",
-      metrics: "DATA INTEGRITY 100% // GEN-TIME < 2s",
+      metrics: "FOCUS: SECURE DATA MANAGEMENT",
     },
     {
       id: "ward-system",
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
         "Displaying complex, real-time patient vitals without overwhelming the medical staff's cognitive load.",
       solution:
         "Developed an interactive, high-contrast dashboard with optimized data rendering, allowing for immediate visual assessment of critical patient metrics.",
-      metrics: "RENDER < 50ms // ACCESSIBILITY 100%",
+      metrics: "FOCUS: ACCESSIBILITY & UI DESIGN",
     },
   ];
 
@@ -141,7 +141,7 @@ export default function ProjectsPage() {
                           </p>
                         </div>
                         <div className="text-[10px] text-slate-400 font-mono pt-2 border-t border-slate-100 dark:border-slate-800">
-                          LOG_METRICS: {project.metrics}
+                          {project.metrics}
                         </div>
                       </div>
                     </div>
