@@ -23,10 +23,11 @@ const skills = [
 
 const featuredProjects = [
   {
-    id: "ai-assistant",
-    title: "AI Portfolio Assistant",
-    tech: "Next.js + Gemini",
-    image: "/images/ai-assistant.jpg",
+    id: "poe2-market-nexus",
+    title: "POE2 Market Nexus",
+    tech: "Python + ETL",
+    image: "/images/poe2-market.jpg",
+    link: "https://poe-2-market-nexus.vercel.app/", // 直接連去你個 Live App
   },
   {
     id: "ward-system",
