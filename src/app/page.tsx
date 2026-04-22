@@ -27,7 +27,7 @@ const featuredProjects = [
     title: "POE2 Market Nexus",
     tech: "Python + ETL",
     image: "/images/poe2-market.jpg",
-    link: "https://poe-2-market-nexus.vercel.app/", // 直接連去你個 Live App
+    link: "https://poe-2-market-nexus.vercel.app/",
   },
   {
     id: "ward-system",
