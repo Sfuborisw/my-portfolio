@@ -1,7 +1,10 @@
 "use client";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function ProjectsPage() {
+  const router = useRouter();
+
   const projects = [
     {
       id: "poe2-market-nexus",
@@ -11,7 +14,8 @@ export default function ProjectsPage() {
         "Real-time arbitrage detection and market analysis tool for Path of Exile 2.",
       tech: ["Python", "FastAPI", "PostgreSQL", "ETL Pipeline"],
       image: "/images/poe2-market.jpg",
-      link: "https://poe-2-market-nexus.vercel.app/",
+      link: "/projects/poe2-market-nexus",
+      liveUrl: "https://poe-2-market-nexus.vercel.app/",
       challenge:
         "Processing high-volume, fluctuating market data in real-time.",
       solution:
@@ -26,7 +30,8 @@ export default function ProjectsPage() {
         "A context-aware AI agent designed to bridge the gap between user queries and professional context.",
       tech: ["Gemini 3 API", "Next.js", "ChromaDB", "NLP"],
       image: "/images/ai-assistant.jpg",
-      link: "https://simple-rag-bot.vercel.app/", // Replace with actual link if different
+      link: "/projects/ai-assistant",
+      liveUrl: "/projects/ai-assistant",
       challenge:
         "Minimizing hallucination while maintaining high-speed conversational responses.",
       solution:
@@ -42,6 +47,7 @@ export default function ProjectsPage() {
       tech: ["React", "State Management", "Data Analytics"],
       image: "/images/property-report.jpg",
       link: "/projects/property-report",
+      liveUrl: "/projects/property-report",
       challenge:
         "Handling complex form states and ensuring 100% data integrity in concurrent multi-user environments.",
       solution:
@@ -57,6 +63,7 @@ export default function ProjectsPage() {
       tech: ["React", "Data Visualization", "Interactive Analytics"],
       image: "/images/ward-system.jpg",
       link: "/projects/ward-system",
+      liveUrl: "/projects/ward-system",
       challenge:
         "Displaying complex, real-time patient vitals without overwhelming the medical staff's cognitive load.",
       solution:
@@ -84,16 +91,20 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div
               key={project.id}
+              onClick={() => {
+                if (project.link !== "#") router.push(project.link);
+              }}
               className={`group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:border-blue-500 transition-all duration-700 
-                          ${project.link === "#" ? "opacity-75" : "hover:shadow-2xl"}`}
+                          ${project.link === "#" ? "opacity-75 cursor-not-allowed" : "hover:shadow-2xl cursor-pointer"}`}
             >
               <div className="flex flex-col md:flex-row min-h-[400px]">
                 {/* Visual Half */}
                 <div className="relative h-64 md:h-auto w-full md:w-3/5 group-hover:md:w-1/2 transition-all duration-700 ease-in-out overflow-hidden border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className="px-3 py-1 bg-slate-900/90 text-white text-[10px] font-black uppercase tracking-widest rounded shadow-xl backdrop-blur-md">
@@ -159,14 +170,17 @@ export default function ProjectsPage() {
                         </span>
                       ))}
                     </div>
-                    {project.link !== "#" && (
-                      <Link
-                        href={project.link}
+
+                    {project.liveUrl && project.liveUrl !== "#" && (
+                      <a
+                        href={project.liveUrl}
                         target="_blank"
-                        className="text-xs font-black text-blue-600 dark:text-blue-400 hover:underline tracking-widest uppercase"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="relative z-10 text-xs font-black text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline tracking-widest uppercase transition-colors"
                       >
                         Launch Project ↗
-                      </Link>
+                      </a>
                     )}
                   </div>
                 </div>
