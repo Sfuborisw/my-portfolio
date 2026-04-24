@@ -179,7 +179,7 @@ export default function ProjectsPage() {
                         onClick={(e) => e.stopPropagation()}
                         className="relative z-10 text-xs font-black text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline tracking-widest uppercase transition-colors"
                       >
-                        Launch Project ↗
+                        Launch Project
                       </a>
                     )}
                   </div>
