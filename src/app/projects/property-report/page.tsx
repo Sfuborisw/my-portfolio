@@ -23,7 +23,6 @@ export default function PropertyReportPage() {
     severity: "Low" as "Low" | "Medium" | "High",
   });
 
-  // 1. 從 Supabase 讀取資料
   useEffect(() => {
     const fetchReports = async () => {
       const { data, error } = await supabase
@@ -54,7 +53,7 @@ export default function PropertyReportPage() {
       .select();
 
     if (data) {
-      setReports([data[0] as Report, ...reports]); // 更新 UI
+      setReports([data[0] as Report, ...reports]);
       setIsModalOpen(false);
       setNewReport({
         property: "",
