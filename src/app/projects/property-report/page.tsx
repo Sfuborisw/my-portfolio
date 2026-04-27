@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from "react"; // 記得加 useEffect
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase"; // 確保你有呢行
+import { supabase } from "@/lib/supabase";
 
 interface Report {
   id: string;
@@ -101,59 +101,9 @@ export default function PropertyReportPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pt-24 pb-12 transition-colors relative">
-      {/* --- Engineering Architecture Brief --- */}
-      <div className="mb-10 p-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 items-center backdrop-blur-sm">
-        {/* Left: Description */}
-        <div className="flex-1">
-          <h3 className="text-[11px] font-black text-blue-500 tracking-[0.2em] uppercase mb-3">
-            System Architecture & Data Flow
-          </h3>
-          <p className="text-sm text-slate-300 leading-relaxed font-medium mb-5">
-            Beyond a standard frontend interface, this ecosystem is fully
-            integrated with a robust{" "}
-            <strong className="text-white">Supabase PostgreSQL</strong> backend.
-            It features real-time data synchronization and an{" "}
-            <strong className="text-white">automated daily Cron job</strong> to
-            seed and reset the database, ensuring absolute data integrity and a
-            pristine demonstration environment.
-          </p>
-          {/* Tech Badges */}
-          <div className="flex flex-wrap gap-2">
-            <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
-              Supabase
-            </span>
-            <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
-              PostgreSQL
-            </span>
-            <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
-              Automated CRON
-            </span>
-          </div>
-        </div>
-
-        {/* Right: Terminal / System Status Display */}
-        <div className="w-full md:w-1/3 bg-black/60 p-5 rounded-xl border border-slate-800/80 font-mono text-xs text-slate-400 shadow-inner">
-          <p className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            DB_STATUS: ONLINE
-          </p>
-          <div className="space-y-1.5 text-[10px] tracking-wider">
-            <p className="flex justify-between">
-              <span>&gt; Provider:</span>{" "}
-              <span className="text-white">Supabase</span>
-            </p>
-            <p className="flex justify-between">
-              <span>&gt; Sync_Mode:</span>{" "}
-              <span className="text-white">Real-time</span>
-            </p>
-            <p className="flex justify-between">
-              <span>&gt; Daily_Job:</span>{" "}
-              <span className="text-blue-400">Enabled (00:00 UTC)</span>
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4">
+        {/* Back Navigation */}
         <Link
           href="/projects"
           className="text-blue-600 dark:text-blue-400 mb-6 inline-block hover:underline"
@@ -161,6 +111,7 @@ export default function PropertyReportPage() {
           ← Back to Gallery
         </Link>
 
+        {/* Header Section */}
         <div className="flex justify-between items-end mb-8">
           <div>
             <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
@@ -178,7 +129,60 @@ export default function PropertyReportPage() {
           </button>
         </div>
 
-        {/* Table section remains unchanged... */}
+        {/* --- Engineering Architecture Brief (Moved inside the container) --- */}
+        <div className="mb-10 p-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 items-center backdrop-blur-sm">
+          {/* Left: Description */}
+          <div className="flex-1">
+            <h3 className="text-[11px] font-black text-blue-500 tracking-[0.2em] uppercase mb-3">
+              System Architecture & Data Flow
+            </h3>
+            <p className="text-sm text-slate-300 leading-relaxed font-medium mb-5">
+              Beyond a standard frontend interface, this ecosystem is fully
+              integrated with a robust{" "}
+              <strong className="text-white">Supabase PostgreSQL</strong>{" "}
+              backend. It features real-time data synchronization and an{" "}
+              <strong className="text-white">automated daily Cron job</strong>{" "}
+              to seed and reset the database, ensuring absolute data integrity
+              and a pristine demonstration environment.
+            </p>
+            {/* Tech Badges */}
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
+                Supabase
+              </span>
+              <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
+                PostgreSQL
+              </span>
+              <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
+                Automated CRON
+              </span>
+            </div>
+          </div>
+
+          {/* Right: Terminal / System Status Display */}
+          <div className="w-full md:w-1/3 bg-black/60 p-5 rounded-xl border border-slate-800/80 font-mono text-xs text-slate-400 shadow-inner">
+            <p className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              DB_STATUS: ONLINE
+            </p>
+            <div className="space-y-1.5 text-[10px] tracking-wider">
+              <p className="flex justify-between">
+                <span>&gt; Provider:</span>{" "}
+                <span className="text-white">Supabase</span>
+              </p>
+              <p className="flex justify-between">
+                <span>&gt; Sync_Mode:</span>{" "}
+                <span className="text-white">Real-time</span>
+              </p>
+              <p className="flex justify-between">
+                <span>&gt; Daily_Job:</span>{" "}
+                <span className="text-blue-400">Enabled (00:00 UTC)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Data Table */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border dark:border-slate-700 overflow-hidden">
           <table className="w-full text-left border-collapse">
             <thead className="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 text-sm uppercase">
@@ -222,7 +226,6 @@ export default function PropertyReportPage() {
                     </span>
                   </td>
                   <td className="p-4 w-40 text-sm">
-                    {/* Add button to toggle Status */}
                     <button
                       onClick={() => toggleStatus(report.id)}
                       className="flex items-center gap-2 hover:opacity-70 transition-opacity"
