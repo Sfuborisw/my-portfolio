@@ -129,8 +129,8 @@ export default function PropertyReportPage() {
           </button>
         </div>
 
-        {/* --- Engineering Architecture Brief (Moved inside the container) --- */}
-        <div className="mb-10 p-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 items-center backdrop-blur-sm">
+        {/* --- Engineering Architecture Brief & Instructions --- */}
+        <div className="mb-10 p-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 backdrop-blur-sm">
           {/* Left: Description */}
           <div className="flex-1">
             <h3 className="text-[11px] font-black text-blue-500 tracking-[0.2em] uppercase mb-3">
@@ -140,10 +140,9 @@ export default function PropertyReportPage() {
               Beyond a standard frontend interface, this ecosystem is fully
               integrated with a robust{" "}
               <strong className="text-white">Supabase PostgreSQL</strong>{" "}
-              backend. It features real-time data synchronization and an{" "}
-              <strong className="text-white">automated daily Cron job</strong>{" "}
-              to seed and reset the database, ensuring absolute data integrity
-              and a pristine demonstration environment.
+              backend. It leverages modern RESTful APIs for secure, persistent
+              data storage, ensuring seamless CRUD operations and strict data
+              integrity across the application.
             </p>
             {/* Tech Badges */}
             <div className="flex flex-wrap gap-2">
@@ -154,31 +153,63 @@ export default function PropertyReportPage() {
                 PostgreSQL
               </span>
               <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
-                Automated CRON
+                REST API
               </span>
             </div>
           </div>
 
-          {/* Right: Terminal / System Status Display */}
-          <div className="w-full md:w-1/3 bg-black/60 p-5 rounded-xl border border-slate-800/80 font-mono text-xs text-slate-400 shadow-inner">
-            <p className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              DB_STATUS: ONLINE
-            </p>
-            <div className="space-y-1.5 text-[10px] tracking-wider">
-              <p className="flex justify-between">
-                <span>&gt; Provider:</span>{" "}
-                <span className="text-white">Supabase</span>
-              </p>
-              <p className="flex justify-between">
-                <span>&gt; Sync_Mode:</span>{" "}
-                <span className="text-white">Real-time</span>
-              </p>
-              <p className="flex justify-between">
-                <span>&gt; Daily_Job:</span>{" "}
-                <span className="text-blue-400">Enabled (00:00 UTC)</span>
-              </p>
-            </div>
+          {/* Right: Interactive Demo Guide (Replaces Terminal) */}
+          <div className="w-full md:w-5/12 bg-slate-800/40 p-6 rounded-xl border border-slate-700/50">
+            <h3 className="text-[11px] font-black text-blue-400 tracking-[0.2em] uppercase mb-4 flex items-center gap-2">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              Interactive Demo Guide
+            </h3>
+            <ul className="space-y-4 text-sm text-slate-300">
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                  1
+                </span>
+                <p className="leading-relaxed">
+                  <strong>Create:</strong> Click{" "}
+                  <span className="text-blue-400 font-bold">+ New Report</span>{" "}
+                  to open the UI and submit a new instance directly to the
+                  Supabase database.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                  {" "}
+                  2
+                </span>
+                <p className="leading-relaxed">
+                  <strong>Delete:</strong> Use the action menu to remove
+                  records, syncing the deletion instantly with the backend.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                  {" "}
+                  3
+                </span>
+                <p className="leading-relaxed">
+                  <strong>Reset:</strong> The database automatically reverts to
+                  its default settings daily to maintain a pristine demo
+                  environment.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
 
