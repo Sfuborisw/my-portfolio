@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase"; // 確保你有呢個 file
+import { supabase } from "@/lib/supabase";
 import {
   LineChart,
   Line,
@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 interface Patient {
-  id: string; // UUID is string
+  id: string;
   name: string;
   age: number;
   bed: string;
@@ -142,15 +142,111 @@ export default function WardSystemPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 pt-24 pb-12 transition-colors">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 pt-24 pb-12 transition-colors relative">
       <div className="max-w-7xl mx-auto px-4">
+        {/* Back Navigation */}
         <Link
           href="/projects"
-          className="text-emerald-600 dark:text-emerald-400 mb-6 inline-block font-medium"
+          className="text-emerald-600 dark:text-emerald-400 mb-6 inline-block font-medium hover:underline"
         >
-          ← Back to Station
+          ← Back to Gallery
         </Link>
 
+        {/* Main Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
+            Ward Patient Chart System
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400 mt-2">
+            Medical monitoring dashboard for tracking real-time patient vitals.
+          </p>
+        </div>
+
+        {/* --- Engineering Architecture Brief & Instructions --- */}
+        <div className="mb-10 p-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 backdrop-blur-sm">
+          {/* Left: Description */}
+          <div className="flex-1">
+            <h3 className="text-[11px] font-black text-emerald-500 tracking-[0.2em] uppercase mb-3">
+              System Architecture & Data Visualization
+            </h3>
+            <p className="text-sm text-slate-300 leading-relaxed font-medium mb-5">
+              This medical monitoring dashboard integrates a{" "}
+              <strong className="text-white">Supabase PostgreSQL</strong>{" "}
+              backend with advanced frontend data visualization. It utilizes{" "}
+              <strong className="text-white">Recharts</strong> to render
+              dynamic, interactive arrays of patient vitals (BPM & Temperature)
+              while ensuring seamless CRUD operations for ward admissions and
+              discharges.
+            </p>
+            {/* Tech Badges */}
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
+                Supabase
+              </span>
+              <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
+                Recharts
+              </span>
+              <span className="px-2 py-1 bg-slate-950 text-slate-300 text-[10px] font-bold tracking-widest uppercase rounded border border-slate-800">
+                Data Analytics
+              </span>
+            </div>
+          </div>
+
+          {/* Right: Interactive Demo Guide */}
+          <div className="w-full md:w-5/12 bg-slate-800/40 p-6 rounded-xl border border-slate-700/50">
+            <h3 className="text-[11px] font-black text-blue-400 tracking-[0.2em] uppercase mb-4 flex items-center gap-2">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              Interactive Demo Guide
+            </h3>
+            <ul className="space-y-4 text-sm text-slate-300">
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                  1
+                </span>
+                <p className="leading-relaxed">
+                  <strong>Admit & Discharge:</strong> Click the{" "}
+                  <span className="text-blue-400 font-bold">+</span> icon to
+                  admit a patient. Hover over a patient card and click &times;
+                  to discharge.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                  2
+                </span>
+                <p className="leading-relaxed">
+                  <strong>Analyze Vitals:</strong> Select a patient card to load
+                  their historical heart rate and temperature data onto the
+                  interactive chart.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                  3
+                </span>
+                <p className="leading-relaxed">
+                  <strong>Live Updates:</strong> Input new vitals and click{" "}
+                  <span className="text-blue-400 font-bold">Save</span>. The
+                  chart and database will update instantly in real-time.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* The Rest of the UI (Grid) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Panel */}
           <div className="lg:col-span-1 space-y-4">
@@ -301,7 +397,7 @@ export default function WardSystemPage() {
         </div>
       </div>
 
-      {/* Admit Patient Modal - Keep same logic but adapt to Supabase */}
+      {/* Admit Patient Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
@@ -317,7 +413,7 @@ export default function WardSystemPage() {
                 required
                 type="text"
                 placeholder="Full Name"
-                className="w-full bg-slate-50 dark:bg-slate-900 border p-3 rounded-xl dark:text-white"
+                className="w-full bg-slate-50 dark:bg-slate-900 border p-3 rounded-xl dark:text-white outline-none focus:ring-2 focus:ring-emerald-500"
                 value={newPatientData.name}
                 onChange={(e) =>
                   setNewPatientData({ ...newPatientData, name: e.target.value })
@@ -327,7 +423,7 @@ export default function WardSystemPage() {
                 required
                 type="number"
                 placeholder="Age"
-                className="w-full bg-slate-50 dark:bg-slate-900 border p-3 rounded-xl dark:text-white"
+                className="w-full bg-slate-50 dark:bg-slate-900 border p-3 rounded-xl dark:text-white outline-none focus:ring-2 focus:ring-emerald-500"
                 value={newPatientData.age}
                 onChange={(e) =>
                   setNewPatientData({ ...newPatientData, age: e.target.value })
@@ -336,7 +432,7 @@ export default function WardSystemPage() {
               <input
                 type="text"
                 placeholder="Bed No."
-                className="w-full bg-slate-50 dark:bg-slate-900 border p-3 rounded-xl dark:text-white"
+                className="w-full bg-slate-50 dark:bg-slate-900 border p-3 rounded-xl dark:text-white outline-none focus:ring-2 focus:ring-emerald-500"
                 value={newPatientData.bed}
                 onChange={(e) =>
                   setNewPatientData({ ...newPatientData, bed: e.target.value })
@@ -346,13 +442,13 @@ export default function WardSystemPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="flex-1 text-slate-500"
+                  className="flex-1 text-slate-500 font-bold hover:bg-slate-100 dark:hover:bg-slate-700 py-3 rounded-xl transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-emerald-600 text-white p-3 rounded-xl font-bold"
+                  className="flex-1 bg-emerald-600 text-white p-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-500/20"
                 >
                   Admit
                 </button>
