@@ -147,7 +147,7 @@ export default function WardSystemPage() {
         {/* Back Navigation */}
         <Link
           href="/projects"
-          className="text-emerald-600 dark:text-emerald-400 mb-6 inline-block font-medium hover:underline"
+          className="text-emerald-600 dark:text-blue-400 mb-6 inline-block font-medium hover:underline"
         >
           ← Back to Gallery
         </Link>
@@ -166,7 +166,7 @@ export default function WardSystemPage() {
         <div className="mb-10 p-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 backdrop-blur-sm">
           {/* Left: Description */}
           <div className="flex-1">
-            <h3 className="text-[11px] font-black text-emerald-500 tracking-[0.2em] uppercase mb-3">
+            <h3 className="text-[11px] font-black text-blue-500 tracking-[0.2em] uppercase mb-3">
               System Architecture & Data Visualization
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed font-medium mb-5">
