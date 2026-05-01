@@ -9,42 +9,17 @@ export default function AiAssistantDetailPage() {
         {/* Breadcrumbs / Back button */}
         <Link
           href="/projects"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200 mb-8 transition-colors"
+          className="text-emerald-600 dark:text-blue-400 mb-6 inline-block font-medium hover:underline"
         >
-          <svg
-            className="w-4 h-4 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M15 19l-7-7 7-7"
-            ></path>
-          </svg>
-          Back to Projects
+          ← Back to Gallery
         </Link>
-
-        {/* Project Detail Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Intelligent Portfolio Assistant
-          </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto italic">
-            &quot;Bridging the gap between user queries and professional context
-            through autonomous AI agents.&quot;
-          </p>
-        </div>
 
         {/* --- Engineering Architecture Brief & Instructions --- */}
         <div className="mb-12 p-6 bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-2xl flex flex-col md:flex-row gap-8 backdrop-blur-sm">
           {/* Left: Description */}
           <div className="flex-1">
             <h3 className="text-[11px] font-black text-blue-500 tracking-[0.2em] uppercase mb-3">
-              AI Engineering & RAG Architecture
+              Intelligent Portfolio Assistant
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium mb-5">
               Based on the{" "}

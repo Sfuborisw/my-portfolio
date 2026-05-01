@@ -106,7 +106,7 @@ export default function PropertyReportPage() {
         {/* Back Navigation */}
         <Link
           href="/projects"
-          className="text-blue-600 dark:text-blue-400 mb-6 inline-block hover:underline"
+          className="text-emerald-600 dark:text-blue-400 mb-6 inline-block font-medium hover:underline"
         >
           ← Back to Gallery
         </Link>
