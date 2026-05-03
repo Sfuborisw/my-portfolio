@@ -4,7 +4,7 @@ import ChatWindow from "../../../components/shared/ChatWindow";
 
 export default function AiAssistantDetailPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 pt-24 pb-12 transition-colors">
+    <div className="min-h-screen bg-white dark:bg-slate-950 pt-24 pb-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4">
         {/* Breadcrumbs / Back button */}
         <Link
@@ -105,50 +105,37 @@ export default function AiAssistantDetailPage() {
             </ul>
           </div>
         </div>
-
-        {/* Main Content: Description and Live Demo */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column: Project Description */}
-          <div className="space-y-6">
-            <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border dark:border-slate-700">
-              <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
-                Key Features & Technologies
-              </h2>
-              <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-2">
-                <li>
-                  <strong>Gemini 3 Flash API:</strong> Real-time, intelligent
-                  conversational AI.
-                </li>
-                <li>
-                  <strong>Next.js App Router:</strong> Modern, performant web
-                  architecture.
-                </li>
-                <li>
-                  <strong>Tailwind CSS v4:</strong> Utility-first styling for
-                  responsive design.
-                </li>
-                <li>
-                  <strong>TypeScript:</strong> Enhanced code quality and
-                  developer experience.
-                </li>
-                <li>
-                  <strong>Dynamic Routing:</strong> Seamless navigation within
-                  the portfolio.
-                </li>
-                <li>
-                  <strong>Dark Mode Support:</strong> User-friendly interface in
-                  all lighting conditions.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Right Column: Live Interactive AI Chat */}
-          <div className="w-full h-[500px] lg:h-[600px]">
+        {/* Main Content: Full-Width Integrated Chat Interface */}
+        <div className="mt-8 flex flex-col items-center">
+          {/* 
+            The Card below will now naturally align with the Engineering Brief 
+            because they share the same parent container (max-w-7xl).
+          */}
+          <div className="w-full bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all h-[600px] lg:h-[750px]">
             <ChatWindow />
           </div>
+
+          {/* Quick Tip Footer (Optional) */}
+          <p className="mt-6 text-sm text-slate-500 dark:text-slate-500 flex items-center gap-2">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Note: This assistant is powered by Boris&apos;s personal project
+            data via RAG.
+          </p>
         </div>
-      </div>
-    </div>
+      </div>{" "}
+      {/* Close max-w-7xl */}
+    </div> // Close min-h-screen
   );
 }
