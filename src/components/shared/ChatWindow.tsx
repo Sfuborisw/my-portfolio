@@ -52,11 +52,6 @@ const ChatWindow = () => {
   };
 
   return (
-    /* 
-       改動重點：
-       1. 移除咗 max-w-2xl 同 h-[600px]，換成 w-full h-full
-       2. 移除咗 border、shadow 同 rounded，等佢完全貼合外部父容器
-    */
     <div className="flex flex-col w-full h-full bg-white dark:bg-slate-800 overflow-hidden transition-colors">
       <div className="bg-blue-600 p-4 text-white font-bold text-center">
         AI Project Assistant
