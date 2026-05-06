@@ -4,7 +4,7 @@ import ChatWindow from "../../../components/shared/ChatWindow";
 
 export default function AiAssistantDetailPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 pt-24 pb-12 transition-colors">
+    <div className="min-h-screen bg-white dark:bg-slate-950 pt-8 pb-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4">
         {/* Breadcrumbs / Back button */}
         <Link
@@ -107,10 +107,6 @@ export default function AiAssistantDetailPage() {
         </div>
         {/* Main Content: Full-Width Integrated Chat Interface */}
         <div className="mt-8 flex flex-col items-center">
-          {/* 
-            The Card below will now naturally align with the Engineering Brief 
-            because they share the same parent container (max-w-7xl).
-          */}
           <div className="w-full bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all h-[600px] lg:h-[750px]">
             <ChatWindow />
           </div>
@@ -135,7 +131,6 @@ export default function AiAssistantDetailPage() {
           </p>
         </div>
       </div>{" "}
-      {/* Close max-w-7xl */}
-    </div> // Close min-h-screen
+    </div>
   );
 }

@@ -142,7 +142,7 @@ export default function WardSystemPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 pt-24 pb-12 transition-colors relative">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 pt-8 pb-12 transition-colors relative">
       <div className="max-w-7xl mx-auto px-4">
         {/* Back Navigation */}
         <Link

@@ -100,7 +100,7 @@ export default function PropertyReportPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pt-24 pb-12 transition-colors relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pt-8 pb-12 transition-colors relative">
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4">
         {/* Back Navigation */}
