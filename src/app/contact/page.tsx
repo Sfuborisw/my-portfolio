@@ -28,7 +28,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 pt-32 pb-20 transition-colors overflow-hidden">
+    <div className="min-h-screen bg-white dark:bg-slate-950 pt-32 pb-20 transition-colors overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header - Slide down and Fade in */}
         <div className="text-center mb-16 animate-in fade-in slide-in-from-top-10 duration-1000 ease-out">
