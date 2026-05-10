@@ -39,7 +39,7 @@ const featuredProjects = [
 
 export default function Home() {
   return (
-    <div className="bg-slate-300 dark:bg-slate-900 transition-colors">
+    <div className="bg-slate-200 dark:bg-slate-950 transition-colors">
       {/* SECTION 1: HERO */}
       <section className="flex flex-col items-center justify-center min-h-[90vh] px-4 text-center">
         {/* 1. Brief introduction (Added above the title to convey professionalism) */}

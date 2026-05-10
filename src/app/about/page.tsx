@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-32 pb-20 transition-colors">
+    <div className="min-h-screen bg-slate-200 dark:bg-slate-950 pt-32 pb-20 transition-colors">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* --- Header Section --- */}
         <header className="mb-20 text-center md:text-left">
