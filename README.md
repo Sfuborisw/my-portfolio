@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boris Wong — AI Engineer & Full-Stack Developer
 
-## Getting Started
+Personal portfolio built with Next.js and TypeScript, deployed on Vercel.
 
-First, run the development server:
+**Live site:** [boris-wong.vercel.app](https://boris-wong.vercel.app)
+
+---
+
+## About
+
+Vancouver-based software developer and data analyst (SFU Computing Science) building at the intersection of AI agents, full-stack products, and quantitative analysis. Fluent in English, Cantonese, and Mandarin — with a focus on localized, real-world AI applications.
+
+This repository contains the source for my portfolio site. The projects showcased below are each maintained in their own repositories.
+
+---
+
+## Featured Projects
+
+### 🦞 CLAW BOT — Autonomous Personal AI Agent
+A self-hosted, Signal-based AI agent that proactively delivers market intelligence and manages trading hypotheses through natural Cantonese conversation. A LangGraph-orchestrated agent routes user intent across specialized handlers, runs scheduled proactive alerts (daily briefings, semiconductor news digests) via APScheduler, and integrates with a separate data service over HTTP.
+
+`Claude API` · `LangGraph` · `FastAPI` · `SQLite` · `Docker` · `APScheduler` · `Python`
+→ [github.com/Sfuborisw/claw-bot](https://github.com/Sfuborisw/claw-bot)
+
+### 📊 Hypothesis Log — Verifiable Trading Journal
+A full-stack trading journal that turns market intuitions into structured, verifiable hypotheses and auto-computes hit rates through statistical analysis. API-first design later allowed CLAW BOT to consume the same service with zero changes.
+
+`React` · `TypeScript` · `FastAPI` · `SQLAlchemy` · `pandas`
+→ [github.com/Sfuborisw/hypothesis-log](https://github.com/Sfuborisw/hypothesis-log)
+
+> **Architecture note:** CLAW BOT and Hypothesis Log are two decoupled services communicating over HTTP — Hypothesis Log owns the data and verification logic; CLAW BOT is the conversational and proactive layer. This demonstrates clean service separation and API-first design.
+
+*Additional projects (ETL pipelines, RAG assistant, full-stack reporting, front-end systems) are showcased on the [live site](https://boris-wong.vercel.app).*
+
+---
+
+## Tech Stack (this site)
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+
+---
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contact
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Portfolio:** [boris-wong.vercel.app](https://boris-wong.vercel.app)
+- **GitHub:** [github.com/Sfuborisw](https://github.com/Sfuborisw)
