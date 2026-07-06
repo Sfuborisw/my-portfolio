@@ -7,6 +7,38 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      id: "claw-bot",
+      title: "CLAW BOT",
+      role: "AI ENGINEER / AGENT ARCHITECT",
+      description:
+        "A self-hosted Signal-based AI agent that proactively delivers market intelligence and manages trading hypotheses through natural conversation.",
+      tech: ["Claude API", "LangGraph", "FastAPI", "Docker", "APScheduler"],
+      image: "/images/claw-bot.jpg",
+      link: "/projects/claw-bot",
+      liveUrl: "https://github.com/Sfuborisw/claw-bot",
+      challenge:
+        "Turning a passive chatbot into a proactive agent that runs continuously, routes intent across multiple tools, and integrates with a separate data service.",
+      solution:
+        "Built a LangGraph-orchestrated agent that classifies intent and routes to specialized handlers (hypothesis query, trade logging, analysis, conversation). Runs on a self-hosted Signal bridge with APScheduler-driven proactive alerts — daily briefings and semiconductor news digests. Communicates with a decoupled Hypothesis Log service over HTTP, demonstrating clean API-first separation. Cantonese-first interface showcasing localized LLM product design.",
+      metrics: "FOCUS: AGENTIC AI & MULTI-SERVICE ARCHITECTURE",
+    },
+    {
+      id: "hypothesis-log",
+      title: "Hypothesis Log",
+      role: "FULL-STACK DEVELOPER / DATA",
+      description:
+        "A full-stack trading journal that turns market intuitions into structured, verifiable hypotheses and auto-computes personal edge through statistical analysis.",
+      tech: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "pandas"],
+      image: "/images/hypothesis-log.jpg",
+      link: "/projects/hypothesis-log",
+      liveUrl: "https://github.com/Sfuborisw/hypothesis-log",
+      challenge:
+        "Retail investors rarely test whether their market instincts actually work — intuitions get forgotten instead of measured.",
+      solution:
+        "Designed a schema capturing each hypothesis as a testable claim (ticker, action, entry price, predicted direction, confidence, timeframe, verification date). A FastAPI + SQLAlchemy backend exposes REST endpoints for logging, retrieving, and verifying hypotheses, plus analysis endpoints computing hit rates by signal and confidence. Built API-first, which later let a separate AI agent (CLAW BOT) consume the same service with zero changes.",
+      metrics: "FOCUS: FULL-STACK & QUANTITATIVE ANALYSIS",
+    },
+    {
       id: "poe2-market-nexus",
       title: "POE2 Market Nexus",
       role: "DATA ENGINEER / BACK-END",
