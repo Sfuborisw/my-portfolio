@@ -321,9 +321,12 @@ export default function WardSystemPage() {
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart
                         data={
-                          activeTab === "BPM"
+                          (activeTab === "BPM"
                             ? selectedPatient.heart_rate_history
-                            : selectedPatient.temp_history
+                            : selectedPatient.temp_history) as {
+                            time: string;
+                            [key: string]: string | number;
+                          }[]
                         }
                       >
                         <CartesianGrid
