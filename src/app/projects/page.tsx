@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       tech: ["Claude API", "LangGraph", "FastAPI", "Docker", "APScheduler"],
       image: "/images/claw-bot.jpg",
       link: "/projects/claw-bot",
-      liveUrl: "https://github.com/Sfuborisw/claw-bot",
+      liveUrl: "/projects/claw-bot",
       challenge:
         "Turning a passive chatbot into a proactive agent that runs continuously, routes intent across multiple tools, and integrates with a separate data service.",
       solution:
